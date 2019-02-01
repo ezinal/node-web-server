@@ -26,6 +26,10 @@ app.use((req,res,next) => {
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/projects',(req,res) => {
+    res.render('projects.hbs');
+});
+
 hbs.registerHelper('getCurrentYear',() => {
     return new Date().getFullYear();
 });
